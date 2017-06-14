@@ -1,0 +1,24 @@
+<ion-header>
+   	<ion-toolbar>
+    	<ion-title>Atendimentos</ion-title>
+    </ion-toolbar>    	
+</ion-header>
+
+<ion-content>
+  
+  <ion-list>
+  	<button ion-item *ngFor="let atd of atendimentos" (click)="atendimentoTapped($event, atd)">
+      {{atd.title}}
+    </button>  	
+  </ion-list>
+
+  <ion-fab  right bottom>
+    <button ion-fab (click)="pedirAtendimento($event)" color="danger"><ion-icon name="add"></ion-icon></button>
+    <!-- <ion-fab-list>
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list> -->
+  </ion-fab>	 
+</ion-content>
