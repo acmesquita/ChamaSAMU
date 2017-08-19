@@ -17,7 +17,7 @@ export class AtendimentoPage{
 	
 	constructor( public toastCtrl: ToastController, public http : Http, public navCtrl: NavController, public alertCtrl: AlertController ){
 
-		this.http.get('http://192.168.0.24:3000/atendimentos.json').map(res => res.json()).subscribe(data => {
+		this.http.get('http://192.168.0.28:3000/atendimentos.json').map(res => res.json()).subscribe(data => {
 			this.atendimentos = [];
         	for (var i = 0; i < data.length; i++) {
         		this.atendimentos.push({title: data[i].titulo});
@@ -64,7 +64,7 @@ export class AtendimentoPage{
            }
            
        	
-           this.http.post("http://192.168.0.24:3000/atendimentos.json", postParams , options)
+           this.http.post("http://192.168.0.28:3000/atendimentos.json", postParams , options)
              .map(res => res.json())
              .subscribe(data => {
                this.atendimentos.push({title: data.titulo});
